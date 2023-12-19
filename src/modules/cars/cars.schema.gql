@@ -1,0 +1,59 @@
+scalar Any
+
+type Car {
+  name: String!
+  brand: String!
+  hasTanirovka: Boolean!
+  engine: String!
+  color: String!
+  distance: String!
+  gearbox: String!
+  description: String!
+  model_id: Int!
+  year: String!
+  price: String!
+  id: Int!
+}
+
+type Query {
+  cars: [Car]
+  onOneType(model_id: Int!): [Car]
+}
+type Response {
+  status: Boolean!
+  data: Any
+}
+type Mutation {
+  createCar(
+    name: String!
+    brand: String!
+    hasTanirovka: Boolean!
+    engine: String!
+    color: String!
+    distance: String!
+    gearbox: String!
+    description: String!
+    model_id: Int!
+    year: String!
+    price: String!
+  ): Response
+
+  updateCar(
+    name: String!
+    brand: String
+    hasTanirovka: Boolean
+    engine: String
+    color: String
+    distance: String
+    gearbox: String
+    description: String
+    model_id: Int
+    year: String
+    price: String
+    id: Int!
+  ): Response
+
+  deleteCar(
+    id: Int!
+  ): Response
+}

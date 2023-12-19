@@ -1,0 +1,22 @@
+scalar Any
+
+type User{
+    id:Int!
+    username:String!
+    password:String!
+    token:String
+}
+
+type Query{
+    users:[User]
+}
+type Response{
+    status:Boolean!
+    data:Any
+    token:String!
+}
+type Mutation {
+    signup(username:String!,password:String!):Response
+    updateUser(username:String!,id:Int!):Response
+    deleteUser(username:String!):Response
+}

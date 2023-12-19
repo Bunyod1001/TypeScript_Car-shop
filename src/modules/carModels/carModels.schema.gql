@@ -1,0 +1,20 @@
+scalar Any
+
+type CarModel{
+    name:String!
+    id:Int!
+    cars:[Car]
+}
+
+type Query{
+    models:[CarModel]
+}
+type Response{
+    status:Boolean!
+    data:Any
+}
+type Mutation {
+    createCarModel(name:String!):Response
+    updateCarModel(name:String!,id:Int!):Response
+    deleteCarModel(name:String!,id:Int!):Response
+}
